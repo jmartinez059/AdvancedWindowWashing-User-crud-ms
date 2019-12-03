@@ -12,4 +12,8 @@ eureka:
     service-url:
       default-zone: ${EUREKA_HOME}
 server:
-  port: 8040
+  port: 8080
+
+logging:
+  root:
+    level: DEBUG
