@@ -9,7 +9,7 @@ import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-import springfox.documentation.spring.data.rest.configuration.SpringDataRestConfiguration;
+//import springfox.documentation.spring.data.rest.configuration.SpringDataRestConfiguration;
 
 @Configuration
 @EnableSwagger2
@@ -32,12 +32,15 @@ public class SwaggerConfig {
                 .groupName("api")
                 .select()
                 .apis(RequestHandlerSelectors.any())
-                .paths(includePath("Address"))
-                .paths(includePath("User"))
+                .paths(includePath("/address"))
+                .paths(includePath("/user"))
                 .build();
     }
 
     private Predicate<String> includePath(final String path) {
-        return input -> input.contains(path);
+        return input -> {
+            System.out.println(input);
+            return input.contains(path);
+        };
     }
 }
