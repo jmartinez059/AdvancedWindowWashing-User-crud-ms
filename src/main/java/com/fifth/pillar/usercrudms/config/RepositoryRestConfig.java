@@ -22,7 +22,7 @@ public class RepositoryRestConfig implements RepositoryRestConfigurer {
                 false);
         provider.addIncludeFilter(new AnnotationTypeFilter(Entity.class));
 
-        final Set<BeanDefinition> beans = provider.findCandidateComponents("com.fifth.pillar.usercrudms");
+        final Set<BeanDefinition> beans = provider.findCandidateComponents("com.fifth.pillar.usercrudms.modles");
 
         for (final BeanDefinition bean : beans) {
             try {

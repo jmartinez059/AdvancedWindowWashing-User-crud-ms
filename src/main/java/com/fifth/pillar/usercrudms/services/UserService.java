@@ -16,4 +16,13 @@ public class UserService {
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
+
+    public User getUserById(Long userId) {
+        return userRepository.findById(userId).get();
+    }
+
+    public User addUser(User user) {
+        System.out.println("\n\nNew User being added to db:" + user.toString());
+        return userRepository.save(user);
+    }
 }
